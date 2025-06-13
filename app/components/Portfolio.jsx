@@ -7,7 +7,7 @@ import levis from "@/app/assets/images/levis.png";
 export default function Portfolio() {
   return (
     <div
-      className=" bg-gray-200  w-full py-12  flex flex-col gap-10 items-center
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 bg-gray-200  w-full py-12  gap-10 items-center
      font-semibold container mx-auto "
     >
       <p className="font-bold text-2xl text-black">Portfolio</p>
