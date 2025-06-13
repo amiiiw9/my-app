@@ -1,5 +1,3 @@
-import AboutMe from "../components/AboutMe";
-
 export const langs = {
   name: {
     en: "Amina Khudoydodova",
