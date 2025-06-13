@@ -1,10 +1,10 @@
 "use client";
 
 import Header from "./components/Header";
-import HeroSection from "./components/heroSection";
+import HeroSection from "./components/HeroSection";
 import AboutMe from "./components/AboutMe";
 import Skills from "./components/Skills";
-import Portfolio from "./components/portfolio";
+import Portfolio from "./components/Portfolio";
 import Contacts from "./components/Contacts";
 import Burger from "./components/burger";
 
