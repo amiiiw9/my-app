@@ -2,8 +2,8 @@ import AboutMe from "../components/AboutMe";
 
 export const langs = {
   name: {
-    en: "Denis Novik",
-    ru: "Денис Новиков",
+    en: "Khudoydodova Amina",
+    ru: "Амина Худойдодова",
   },
   home: {
     en: "Home",
