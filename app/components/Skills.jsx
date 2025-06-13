@@ -8,7 +8,7 @@ export default function Skills() {
 
       <p> I work in such programs as</p>
 
-      <div className="flex">
+      <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 ">
         <Image
           className="mr-14"
           src={"/images/aftereffects.svg"}

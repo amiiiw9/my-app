@@ -7,25 +7,71 @@ import levis from "@/app/assets/images/levis.png";
 export default function Portfolio() {
   return (
     <div
-      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 bg-gray-200  w-full py-12  gap-10 items-center
-     font-semibold container mx-auto "
+      className="
+        bg-gray-200
+        w-full
+        py-8 sm:py-12 md:py-16 // Уменьшаем отступы по вертикали на маленьких экранах
+        flex flex-col
+        gap-6 sm:gap-10 md:gap-12 // Уменьшаем отступы между элементами
+        items-center
+        font-semibold
+        container mx-auto
+        px-4 sm:px-6 md:px-8 lg:px-12 // Добавляем горизонтальные отступы для лучшего внешнего вида на мобильных
+      "
     >
-      <p className="font-bold text-2xl text-black">Portfolio</p>
-
-      <div className="bg-white p-4 shadow-md">
-        <Image src={levis} alt="levis image" width={560} height={560} />
+      <p className="font-bold text-xl sm:text-2xl md:text-3xl text-black">
+        Portfolio
+      </p>{" "}
+      {/* Уменьшаем размер текста на мобильных */}
+      {/* Обертка для изображений, чтобы они занимали всю ширину, но не были слишком большими */}
+      <div className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl bg-white p-2 sm:p-4 shadow-md">
+        {" "}
+        {/* Контролируем максимальную ширину и отступы */}
+        <Image
+          src={levis}
+          alt="levis image"
+          layout="responsive" // Делает изображение адаптивным к родительскому контейнеру
+          width={560} // Эти значения будут использоваться Next/Image для соотношения сторон
+          height={560} // и для генерации srcSet
+        />
       </div>
-      <a href="">Online fashion store - Homepage</a>
-
-      <div className="bg-white p-4 shadow-md">
-        <Image src={reebok} alt="reebok web" width={560} height={560} />
+      <a
+        href=""
+        className="text-sm sm:text-base md:text-lg text-blue-600 hover:underline"
+      >
+        Online fashion store - Homepage
+      </a>{" "}
+      {/* Адаптируем размер текста для ссылок */}
+      <div className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl bg-white p-2 sm:p-4 shadow-md">
+        <Image
+          src={reebok}
+          alt="reebok web"
+          layout="responsive"
+          width={560}
+          height={560}
+        />
       </div>
-      <a href="">Reebok store - Concept </a>
-
-      <div className="bg-white p-4 shadow-md">
-        <Image src={braun} alt="braun image" width={560} height={560} />
+      <a
+        href=""
+        className="text-sm sm:text-base md:text-lg text-blue-600 hover:underline"
+      >
+        Reebok store - Concept{" "}
+      </a>
+      <div className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl bg-white p-2 sm:p-4 shadow-md">
+        <Image
+          src={braun}
+          alt="braun image"
+          layout="responsive"
+          width={560}
+          height={560}
+        />
       </div>
-      <a href="">Braun Landing Page - Concept </a>
+      <a
+        href=""
+        className="text-sm sm:text-base md:text-lg text-blue-600 hover:underline"
+      >
+        Braun Landing Page - Concept{" "}
+      </a>
     </div>
   );
 }

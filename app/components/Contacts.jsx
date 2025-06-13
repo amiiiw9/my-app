@@ -12,12 +12,6 @@ export default function Contacts() {
         <button className="border border-black rounded-full text-white bg-black py-2 px-4">
           Send message
         </button>
-        <div className="flex gap-12 mt-10">
-          <img src="/images/ball.svg" alt="ball" />
-          <img src="/images/insta.svg" alt="insta" />
-          <img src="/images/be.svg" alt="be" />
-          <img src="/images/in.svg" alt="in" />
-        </div>
       </div>
     </>
   );
