@@ -10,7 +10,6 @@ export const langs = {
   about: {
     en: "About Me",
     ru: "Обо мне",
-    g,
   },
   skills: {
     en: "Skills",
