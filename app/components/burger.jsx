@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import Burger from "@/app/assets/images/burger.svg";
+import burger from "@/app/assets/images/burger.svg";
 import close from "@/app/assets/images/close.svg";
 import useLanguage from "@/app/context/useLanguage.jsx";
 import { langs } from "@/app/data/langs.js";
