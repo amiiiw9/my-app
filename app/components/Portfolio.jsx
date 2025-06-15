@@ -1,8 +1,7 @@
-import Link from "next/link";
 import Image from "next/image";
-import braun from "@/public/images/braun.png";
-import reebok from "@/app/assets/images/reebok.png";
-import levis from "@/app/assets/images/levis.png";
+import braun from "@/app/assets/images/portfolio3.png";
+import reebok from "@/app/assets/images/portfolio2.png";
+import levis from "@/app/assets/images/portfolio1.png";
 
 export default function Portfolio() {
   return (

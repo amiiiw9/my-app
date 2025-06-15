@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import burger from "@/public/images/burger.svg";
-import close from "@/public/images/close.svg";
+import burger from "@/app/assets/images/burger.svg";
+import close from "@/app/assets/images/close.svg";
 
 export default function Burger({ button }) {
   const [open, setOpen] = useState(false);

@@ -1,30 +1,54 @@
-import Link from "next/link";
-import { langs } from "../data/langs";
+"use client";
+import useLanguage from "@/app/context/useLanguage.jsx";
+import { langs } from "@/app/data/langs.js";
 
 export default function Header() {
+  const { lang } = useLanguage();
+
+  const links = [
+    {
+      text: langs.home[lang],
+      link: "#home",
+    },
+    {
+      text: langs.about[lang],
+      link: "#aboutme",
+    },
+    {
+      text: langs.skills[lang],
+      link: "#skills",
+    },
+    {
+      text: langs.portfolio[lang],
+      link: "#portfolio",
+    },
+    {
+      text: langs.contacts[lang],
+      link: "#contacts",
+    },
+  ];
+
+  function scrollTo(link) {
+    document.querySelector(link).scrollIntoView({
+      behavior: "smooth",
+    });
+  }
+
   return (
-    <nav className="hidden md:flex w-full justify-center px-4 py-2 border-b-2 border-gray-100 container mx-auto">
-      <ul className="w-full flex gap-30 text-xl font-semibold text-gray-500 items-center justify-center ">
-        <li>
-          <Link href={"/main"}>Home</Link>
-        </li>
-
-        <li>
-          <Link href={"/about"}>About Me</Link>
-        </li>
-
-        <li>
-          <Link href={"/skills"}>Skills</Link>
-        </li>
-
-        <li>
-          <Link href={"/portfolio"}>Portfolio</Link>
-        </li>
-
-        <li>
-          <Link href={"/contact"}>Contacts</Link>
-        </li>
-      </ul>
-    </nav>
+    <>
+      <div className="2xl:container mx-auto px-5">
+        <ul className="flex justify-between py-8 text-xl border-b border-b-gray-400 gap-8">
+          {links.map((link) => (
+            <button
+              key={link.text}
+              className="cursor-pointer text-gray-500 transform transition-all duration-300 font-bold hover:text-black"
+              onClick={() => scrollTo(link.link)}
+            >
+              {link.text}
+            </button>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 }

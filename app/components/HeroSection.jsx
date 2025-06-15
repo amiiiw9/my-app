@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import hero from "@/app/assets/images/hero.png";
-import hero_mobile from "@/app/assets/images/hero-mobile.png";
+import heromobile from "@/app/assets/images/heromobile.png";
 import Burger from "./burger";
 import useLanguage from "../context/useLanguage";
 import { langs } from "../data/langs";
@@ -34,7 +34,7 @@ export default function HeroSection() {
             <Burger button={true} />
           </div>
           <div className="flex justify-center">
-            <Image src={hero_mobile} alt="hero mobile" />
+            <Image src={heromobile} alt="hero mobile" />
           </div>
         </div>
         <Burger />
