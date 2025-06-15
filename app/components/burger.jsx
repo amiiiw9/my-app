@@ -4,6 +4,9 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import burger from "@/app/assets/images/burger.svg";
 import close from "@/app/assets/images/close.svg";
+import useLanguage from "@/app/context/useLanguage.jsx";
+import { langs } from "@/app/data/langs.js";
+import ChangeLangButton from "./ChangeLangButton";
 
 export default function Burger({ button }) {
   const [open, setOpen] = useState(false);
@@ -15,26 +18,27 @@ export default function Burger({ button }) {
       document.body.classList.remove("overflow-hidden");
     }
   }, [open]);
+  const { lang } = useLanguage();
 
   const links = [
     {
-      text: "Home",
+      text: langs.home[lang],
       link: "#home",
     },
     {
-      text: "About Me",
+      text: langs.about[lang],
       link: "#aboutme",
     },
     {
-      text: "Skills",
+      text: langs.skills[lang],
       link: "#skills",
     },
     {
-      text: "Portfolio",
+      text: langs.portfolio[lang],
       link: "#portfolio",
     },
     {
-      text: "Contacts",
+      text: langs.contacts[lang],
       link: "#contacts",
     },
   ];
@@ -49,18 +53,22 @@ export default function Burger({ button }) {
   return (
     <>
       {button && (
-        <button onClick={() => setOpen(true)} className="w-10 h-10">
-          <Image className="w-full h-full" src={burger} alt="burger" />
+        <button onClick={() => setOpen(true)} className="w-10 h-10 cursor-auto">
+          <Image
+            className="w-full h-full cursor-pointer"
+            src={burger}
+            alt="burger"
+          />
         </button>
       )}
       {open && (
-        <div className="bg-white absolute w-screen h-screen z-30 top-0 left-0 p-8">
+        <div className="bg-white absolute w-screen h-screen z-30 top-0 left-0 p-8 flex flex-col justify-between">
           <div className="flex justify-between items-start">
             <div className="flex flex-col items-start gap-8">
               {links.map((link) => (
                 <button
                   key={link.text}
-                  className="cursor-pointer text-3xl font-semibold"
+                  className="cursor-pointer text-3xl font-semibold text-gray-500 transition-all duration-300 hover:text-black"
                   onClick={() => scrollTo(link.link)}
                 >
                   {link.text}
@@ -68,13 +76,16 @@ export default function Burger({ button }) {
               ))}
             </div>
             <button className="w-8 h-8" onClick={() => setOpen(false)}>
-              <Image className="w-full h-full" src={close} alt="close" />
+              <Image
+                className="w-full h-full cursor-pointer"
+                src={close}
+                alt="close"
+              />
             </button>
           </div>
-          <div className="relative h-1/2">
-            <button className="text-3xl absolute -rotate-90 text-nowrap bottom-0 right-0 translate-x-1/3">
-              RU | ENG
-            </button>
+
+          <div className="absolute bottom-20 right-10">
+            <ChangeLangButton />
           </div>
         </div>
       )}

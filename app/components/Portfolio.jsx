@@ -1,76 +1,46 @@
+"use client";
+import useLanguage from "@/app/context/useLanguage.jsx";
+import { langs } from "@/app/data/langs.js";
+import portfolio1 from "@/app/assets/images/portfolio1.png";
+import portfolio3 from "@/app/assets/images/portfolio3.png";
+import portfolio2 from "@/app/assets/images/portfolio2.png";
 import Image from "next/image";
-import braun from "@/app/assets/images/portfolio3.png";
-import reebok from "@/app/assets/images/portfolio2.png";
-import levis from "@/app/assets/images/portfolio1.png";
 
 export default function Portfolio() {
+  const { lang } = useLanguage();
+
   return (
     <div
-      className="
-        bg-gray-200
-        w-full
-        py-8 sm:py-12 md:py-16 // Уменьшаем отступы по вертикали на маленьких экранах
-        flex flex-col
-        gap-6 sm:gap-10 md:gap-12 // Уменьшаем отступы между элементами
-        items-center
-        font-semibold
-        container mx-auto
-        px-4 sm:px-6 md:px-8 lg:px-12 // Добавляем горизонтальные отступы для лучшего внешнего вида на мобильных
-      "
+      id="portfolio"
+      className="w-full bg-gray-100 py-10 flex flex-col justify-center items-center text-center"
     >
-      <p className="font-bold text-xl sm:text-2xl md:text-3xl text-black">
-        Portfolio
-      </p>{" "}
-      {/* Уменьшаем размер текста на мобильных */}
-      {/* Обертка для изображений, чтобы они занимали всю ширину, но не были слишком большими */}
-      <div className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl bg-white p-2 sm:p-4 shadow-md">
-        {" "}
-        {/* Контролируем максимальную ширину и отступы */}
-        <Image
-          src={levis}
-          alt="levis image"
-          layout="responsive" // Делает изображение адаптивным к родительскому контейнеру
-          width={560} // Эти значения будут использоваться Next/Image для соотношения сторон
-          height={560} // и для генерации srcSet
-        />
-      </div>
-      <a
-        href=""
-        className="text-sm sm:text-base md:text-lg text-blue-600 hover:underline"
-      >
-        Online fashion store - Homepage
-      </a>{" "}
-      {/* Адаптируем размер текста для ссылок */}
-      <div className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl bg-white p-2 sm:p-4 shadow-md">
-        <Image
-          src={reebok}
-          alt="reebok web"
-          layout="responsive"
-          width={560}
-          height={560}
-        />
-      </div>
-      <a
-        href=""
-        className="text-sm sm:text-base md:text-lg text-blue-600 hover:underline"
-      >
-        Reebok store - Concept{" "}
-      </a>
-      <div className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl bg-white p-2 sm:p-4 shadow-md">
-        <Image
-          src={braun}
-          alt="braun image"
-          layout="responsive"
-          width={560}
-          height={560}
-        />
-      </div>
-      <a
-        href=""
-        className="text-sm sm:text-base md:text-lg text-blue-600 hover:underline"
-      >
-        Braun Landing Page - Concept{" "}
-      </a>
+      <h1 className="text-4xl font-bold pt-20 pb-10">
+        {langs.portfolio[lang]}
+      </h1>
+      <Image
+        className="cursor-pointer px-5"
+        src={portfolio1}
+        alt="portfolio1"
+      />
+      <p className="border-b-2 border-black text-lg mt-5 mb-20 cursor-pointer">
+        {langs.portfolio_info_1[lang]}
+      </p>
+      <Image
+        className="cursor-pointer px-5"
+        src={portfolio2}
+        alt="portfolio2"
+      />
+      <p className="border-b-2 border-black text-lg mt-5 mb-20 cursor-pointer">
+        {langs.portfolio_info_2[lang]}
+      </p>
+      <Image
+        className="cursor-pointer px-5"
+        src={portfolio3}
+        alt="portfolio3"
+      />
+      <p className="border-b-2 border-black text-lg mt-5 mb-15 cursor-pointer">
+        {langs.portfolio_info_3[lang]}
+      </p>
     </div>
   );
 }
