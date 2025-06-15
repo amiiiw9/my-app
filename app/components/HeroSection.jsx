@@ -2,10 +2,10 @@
 import Image from "next/image";
 import hero from "@/app/assets/images/hero.png";
 import heromobile from "@/app/assets/images/heromobile.png";
-import Burger from "@/app/components/Burger.jsx";
+import Burger from "@/app/components/burger.jsx";
 import useLanguage from "@/app/context/useLanguage.jsx";
 import { langs } from "../data/langs";
-import ChangeLangButton from "./ChangeLangButton";
+import ChangeLangButton from "@/app/components/ChangeLangButton.jsx";
 
 export default function HeroSection() {
   const { lang } = useLanguage();
