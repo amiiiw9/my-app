@@ -6,7 +6,6 @@ import AboutMe from "./components/AboutMe";
 import Skills from "./components/Skills";
 import Portfolio from "./components/Portfolio";
 import Contacts from "./components/Contacts";
-import Burger from "./components/Burger";
 import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({
