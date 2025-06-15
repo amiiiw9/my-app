@@ -2,7 +2,7 @@
 import Image from "next/image";
 import hero from "@/app/assets/images/hero.png";
 import heromobile from "@/app/assets/images/heromobile.png";
-import Burger from "./Burger";
+import Burger from "@/app/components/Burger.jsx";
 import useLanguage from "@/app/context/useLanguage.jsx";
 import { langs } from "../data/langs";
 import ChangeLangButton from "./ChangeLangButton";
