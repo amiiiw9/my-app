@@ -27,11 +27,12 @@ export default function HeroSection() {
         <div className="px-8 py-10 flex flex-col gap-8">
           <div className="flex justify-between">
             <div className="flex flex-col gap-4">
-              <h1 className="text-5xl font-bold w-20">{langs.name[lang]}</h1>
+              <h1 className="text-3xl font-bold w-20">{langs.name[lang]}</h1>
               <p className="text-xl w-52 ">{langs.short_info[lang]}</p>
             </div>
             <Burger button={true} />
           </div>
+
           <div className="flex justify-center">
             <Image src={heromobile} alt="hero mobile" className="w-[370px]" />
           </div>
